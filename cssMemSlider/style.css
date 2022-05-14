@@ -9,13 +9,16 @@ body {
 }
 
 .container {
-    text-align: center;
     margin: 5vh auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     overflow: hidden;
 }
 
 .slider {
     margin: 0 auto;
+    margin-bottom: 20px;
     max-width: 880px;
     max-height: 880px;
     display: flex;
@@ -33,4 +36,13 @@ body {
 
 img {
     object-fit: contain;
+}
+
+a { 
+    display: inline-block;
+    margin-right: 15px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 25px;
+    width: 25px;
 }
