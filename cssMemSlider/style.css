@@ -5,63 +5,70 @@
 }
 
 body {
-    background-color: coral;
+    background-color:coral;
 }
 
 .container {
-    margin: 5vh auto;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: hidden;
 }
 
-.wrapper {
-    position: relative;
+input{
+    opacity: 0;
 }
 
 .slider {
     margin: 0 auto;
     margin-bottom: 20px;
-    max-width: 880px;
+    max-width: 879px;
     /* max-height: 880px; */
     display: flex;
-    overflow-x: auto;
-    border-radius: 15px;
+    overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
 }
 
 .slider__slide {
+    padding: 5px 10px;
+    background-color:rgba(255, 255, 255, 0.1) ;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
-    min-width: 880px;
+    min-width: 879px;
     display: flex;
     scroll-snap-align: center;
+    justify-content: center;
 }
 
 img {
+    border-radius: 15px;
     object-fit: contain;
 }
 
-.slider__slide p {
+.text p {
     margin-top: auto;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 35px;
     color: #fff;
 }
 
-.slider__pgn {
-    position: absolute;
-    right: 0;
-    bottom: 45px;
+.bottom {
+    display: flex;
+    justify-content: space-between;
 }
 
-a { 
-    position: relative;
+.text {
+    display: flex;
+}
+
+
+.slider__pgn span { 
     display: inline-block;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
+    border: 3px solid #fff;
     height: 25px;
     width: 25px;
 }
@@ -70,11 +77,11 @@ a:not(:last-child) {
     margin-right: 25px;
 }
 
-a::before {
-    position: absolute;
-    content: "";
-    top: -12px;
-    left: -12px;
-    bottom: -12px;
-    right: -12px;
+#slide-1:checked ~ .bottom > .slider__pgn > label[for="slide-1"] > span,
+#slide-2:checked ~ .bottom > .slider__pgn > label[for="slide-2"] > span,
+#slide-3:checked ~ .bottom > .slider__pgn > label[for="slide-3"] > span,
+#slide-4:checked ~ .bottom > .slider__pgn > label[for="slide-4"] > span,
+#slide-5:checked ~ .bottom > .slider__pgn > label[for="slide-5"] > span {
+    background-color: #fff;
+    transform: scale(1.1);
 }

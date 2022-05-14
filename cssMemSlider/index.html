@@ -9,36 +9,59 @@
 </head>
 <body>  
     <div class="container">
+        
         <div class="wrapper">
+
+            <input class="input" id="slide-1" type="radio" name="radio-input" checked>
+            <input class="input" id="slide-2" type="radio" name="radio-input">
+            <input class="input" id="slide-3" type="radio" name="radio-input">
+            <input class="input" id="slide-4" type="radio" name="radio-input">
+            <input class="input" id="slide-5" type="radio" name="radio-input">
+
             <div class="slider">
                 <div id="slide_1" class="slider__slide">
                     <img src="./assets/01+.jpeg" alt="мем">
-                    <p>Text 1</p>
                 </div>
                 <div id="slide_2" class="slider__slide">
                     <img src="./assets/02.jpg" alt="мем">
-                    <p>Text 2</p>
                 </div>
                 <div id="slide_3" class="slider__slide">
                     <img src="./assets/03.jpg" alt="мем">
-                    <p>Text 3</p>
                 </div>
                 <div id="slide_4" class="slider__slide">
                     <img src="./assets/04.jfif" alt="мем">
-                    <p>Text 4</p>
                 </div>
                 <div id="slide_5" class="slider__slide">
                     <img src="./assets/05.jpeg" alt="мем">
-                    <p>Text 5</p>
                 </div>
             </div>
 
-            <div class="slider__pgn">
-                <a class="slider__bullet" href="#slide_1"></a>
-                <a class="slider__bullet" href="#slide_2"></a>
-                <a class="slider__bullet" href="#slide_3"></a>
-                <a class="slider__bullet" href="#slide_4"></a>
-                <a class="slider__bullet" href="#slide_5"></a>
+            <div class="bottom">
+                <div class="text">
+                    <p>Meme#1</p>
+                    <p>Meme#2</p>
+                    <p>Meme#3</p>
+                    <p>Meme#4</p>
+                    <p>Meme#5</p>
+                </div>
+
+                <div class="slider__pgn">
+                    <label class="slider__bullet" for="slide-1">
+                        <span></span>
+                    </label>
+                    <label class="slider__bullet" for="slide-2">
+                        <span></span>
+                    </label>
+                    <label class="slider__bullet" for="slide-3">
+                        <span></span>
+                    </label>
+                    <label class="slider__bullet" for="slide-4">
+                        <span></span>
+                    </label>
+                    <label class="slider__bullet" for="slide-5">
+                        <span></span>
+                    </label>
+                </div>
             </div>
         </div>
 
