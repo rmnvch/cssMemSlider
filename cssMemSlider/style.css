@@ -1,0 +1,242 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color:coral;
+}
+
+.wrapper {
+    margin: auto auto; 
+    max-width: 35vw; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;  
+}
+
+input{
+    visibility: hidden;
+}
+
+.slider {
+    margin-bottom: 2vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.slider__slide {
+    min-width: 100%;
+    padding: 0.8rem 0.8rem;
+    background-color:rgba(255, 255, 255, 0.1) ;
+    border-radius: 1rem;
+    transition: all 0.6s ease-in-out;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    object-fit: fill;
+}
+
+.text {
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.text p {
+    height: 100%;
+    margin-top: auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    color: #fff;
+    transition: all 0.6s ease-in-out;
+}
+
+.bottom {
+    height: 3.5rem;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+label{
+    padding: 0.4em 0.4em;
+    cursor: pointer;
+    display: inline-block;
+}
+
+input[type="radio"] ~ .bottom .slider__pgn > label:hover > span {
+    border-color: brown;
+}
+
+input[type="radio"] ~ .bottom .slider__pgn > label:active > span {
+    background-color: brown;
+}
+
+input[type="radio"]:not(:checked) ~ .bottom .slider__pgn > label:hover > span {
+    pointer-events: none;
+}
+
+
+.slider__pgn span { 
+    display: inline-block;
+    border-radius: 50%;
+    border: 0.2rem solid #fff;
+    height: 1.5rem;
+    width: 1.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+#slide-1:checked ~ .bottom > .slider__pgn > label[for="slide-1"] > span,
+#slide-2:checked ~ .bottom > .slider__pgn > label[for="slide-2"] > span,
+#slide-3:checked ~ .bottom > .slider__pgn > label[for="slide-3"] > span,
+#slide-4:checked ~ .bottom > .slider__pgn > label[for="slide-4"] > span,
+#slide-5:checked ~ .bottom > .slider__pgn > label[for="slide-5"] > span {
+    background-color: #fff;
+    transform: scale(1.1);
+}
+
+#slide-1:checked ~ .slider > #slide_1 {
+    margin-left: 0;
+}
+
+#slide-2:checked ~ .slider > #slide_1 {
+    margin-left: -100%;
+}
+
+#slide-3:checked ~ .slider > #slide_1 {
+    margin-left: -200%;
+}
+
+#slide-4:checked ~ .slider > #slide_1 {
+    margin-left: -300%;
+}
+
+#slide-5:checked ~ .slider > #slide_1 {
+    margin-left: -400%;
+}
+
+#slide-1:checked ~ .bottom > .text > p:first-child {
+    margin-top: 0;
+}
+
+#slide-2:checked ~ .bottom > .text > p:first-child {
+    margin-top: -3.5rem;
+}
+
+#slide-3:checked ~ .bottom > .text > p:first-child {
+    margin-top: -7rem;
+}
+
+#slide-4:checked ~ .bottom > .text > p:first-child {
+    margin-top: -10.5rem;
+}
+
+#slide-5:checked ~ .bottom > .text > p:first-child {
+    margin-top: -14rem;
+}
+
+@media screen and (max-width: 1440px) {
+    .text p {
+        font-size: 1.7rem;
+    }
+
+    .slider__pgn span { 
+        height: 1.4rem;
+        width: 1.4rem;
+    }
+
+    label{
+        padding: 0.3em 0.3em;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .text p {
+        font-size: 1.5rem;
+    }
+
+    .slider__pgn span { 
+        height: 1.2rem;
+        width: 1.2rem;
+    }
+
+    label{
+        padding: 0.2em 0.2em;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .wrapper {
+        max-width: 3vh auto;
+    }
+
+    .text p {
+        font-size: 1.3rem;
+    }
+
+    .slider__pgn span { 
+        height: 1.1rem;
+        width: 1.1rem;
+    }
+
+    label{
+        padding: 0.1em 0.1em;
+    }
+}
+
+
+@media screen and (max-width: 860px) {
+    .bottom {
+        height: 6rem;
+        flex-direction: column-reverse;
+    }
+
+    .text {
+        overflow: hidden;
+        height: 50%;
+    }
+
+    .slider__pgn {
+        margin-bottom: 10px;
+        align-self: center;
+    }
+
+    .slider__pgn span { 
+        border-width: 0.1rem;
+    }
+
+    #slide-2:checked ~ .bottom > .text > p:first-child {
+        margin-top: -3rem;
+    }
+    
+    #slide-3:checked ~ .bottom > .text > p:first-child {
+        margin-top: -6rem;
+    }
+    
+    #slide-4:checked ~ .bottom > .text > p:first-child {
+        margin-top: -9rem;
+    }
+    
+    #slide-5:checked ~ .bottom > .text > p:first-child {
+        margin-top: -12rem;
+    }    
+}
+
+@media screen and (max-width: 425px) {
+    .text p {
+        font-size: 1.2rem;
+    }
+
+    .slider__pgn span { 
+        height: 1rem;
+        width: 1rem;
+    }
+    
+}
